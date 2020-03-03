@@ -1,5 +1,5 @@
 import discord
-import random
+import os
 
 client = discord.Client()
 
@@ -134,16 +134,5 @@ async def on_message(message):
         await message.channel.send(f2.read())
         f1.close
 
-
-    if message.content.startswith("얼굴보여줘"):
-        your_int = random.choice(range(1, 5))
-        if your_int == 1:
-            await message.channel.send(file=discord.File("abcd.jpg"))
-        elif your_int == 2:
-            await message.channel.send(file=discord.File("1540796320662.jpg"))
-        elif your_int == 3:
-            await message.channel.send(file=discord.File("KakaoTalk_20181211_154939737.jpg"))
-        elif your_int == 4:
-            await message.channel.send(file=discord.File("KakaoTalk_20181211_154940244.jpg"))
-
-client.run("Njg0MzMyODk2NzU2MzAxODQ0.Xl4llw.HlSOlAoxKcVBxkhkqCgaSQc_tns")
+access_token = os.environ["BOT_TOKEN"]        
+client.run("access_token")
